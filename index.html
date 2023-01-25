@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Kalkulator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+      integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="kalkulator">
+        <div class="kalk-kupur">
+            
+      <ul class="cupuru">
+        <li class="item">
+          <label for="K1000">1000</label>
+          <input class="speedbuton" value="0" id="K1000" type="number" data-nominal="1000" class="input" />
+        </li>
+        <li class="item">
+          <label for="K500">500</label>
+          <input class="speedbuton" value="0" id="K500" type="number" data-nominal="500" class="input" />
+        </li>
+        <li class="item">
+          <label for="K200">200</label>
+          <input class="speedbuton" value="0" id="K200" type="number" data-nominal="200" class="input" />
+        </li>
+        <li class="item">
+          <label for="K100">100</label>
+          <input class="speedbuton" value="0" id="K100" type="number" data-nominal="100" class="input" />
+        </li>
+        <li class="item">
+          <label for="K50">50</label>
+          <input class="speedbuton" value="0" id="K50" type="number" data-nominal="50" class="input" />
+        </li>
+        <li class="item">
+          <label for="K20">20</label>
+          <input class="speedbuton" value="0" id="K20" type="number" data-nominal="20" class="input" />
+        </li>
+        <li class="item">
+          <label for="K10">10</label>
+          <input class="speedbuton" value="0" id="K10" type="number" data-nominal="10" class="input" />
+        </li>
+        <li class="item">
+          <label for="K5">5</label>
+          <input class="speedbuton" value="0" id="K5" type="number" data-nominal="5" class="input" />
+        </li>
+        <li class="item">
+          <label for="K2">2</label>
+          <input class="speedbuton" value="0" id="K2" type="number" data-nominal="2" class="input" />
+        </li>
+        <li class="item">
+          <label for="K1">1</label>
+          <input class="speedbuton" value="0" id="K1" type="number" data-nominal="1" class="input" />
+        </li>
+      </ul>
+
+      <ul class="radio-group">
+        <li class="radio-item"> 
+          <input id="radio-1" type="radio" name="sidepanel" data-value="15"  > 
+          <label class="button" for="radio-1"> 15</label>   
+        </li>
+        <li class="radio-item"> 
+          <input id="radio-2" type="radio" name="sidepanel" data-value="20"  > 
+          <label class="button" for="radio-2"> 20</label>   
+        </li>
+        <li class="radio-item"> 
+          <input id="radio-3" type="radio" name="sidepanel" data-value="25"  > 
+          <label class="button" for="radio-3"> 25</label>   
+        </li>
+        <li class="radio-item"> 
+          <input id="radio-4" type="radio" name="sidepanel" data-value="30"  > 
+          <label class="button" for="radio-4"> 30</label>   
+        </li>
+        <li class="radio-item"> 
+          <input id="radio-5" type="radio" name="sidepanel" data-value="35"  > 
+          <label class="button" for="radio-5"> 35</label>   
+        </li>
+        <li class="radio-item"> 
+          <input id="radio-6" type="radio" name="sidepanel" data-value="40"  > 
+          <label class="button" for="radio-6"> 40</label>   
+        </li>
+        <li class="radio-item"> 
+          <input id="radio-7" type="radio" name="sidepanel" data-value="45"  > 
+          <label class="button" for="radio-7"> 45</label>   
+        </li>
+        <li class="radio-item"> 
+          <input id="radio-8" type="radio" name="sidepanel" data-value="50"  > 
+          <label class="button" for="radio-8"> 50</label>   
+        </li>
+        <li class="radio-item"> 
+          <input id="radio-9" type="radio" name="sidepanel" data-value="0 "  checked> 
+          <label class="button" for="radio-9"> 0 </label>   
+        </li>
+        <li class="radio"> 
+          <button class="button" id="clear">C </button>   
+        </li>
+      </ul>
+
+
+
+
+
+
+
+    </div>
+
+
+      <div>
+        <div class="calkulator">
+          <div class="result">
+            <span id="kalk-kupur">0</span>
+
+            <textarea name="" id="example" rows="1"></textarea>
+            
+            <span class="" id="answer">0</span>
+          </div>
+
+          <ul class="buttons">
+            <li class="button item">1</li>
+            <li class="button item">2</li>
+            <li class="button item">3</li>
+            <li class="button item">*</li>
+            <li class="button item">4</li>
+            <li class="button item">5</li>
+            <li class="button item">6</li>
+            <li class="button item">-</li>
+            <li class="button item">7</li>
+            <li class="button item">8</li>
+            <li class="button item">9</li>
+            <li class="button item">/</li>
+            <li class="button item">0</li>
+            <li class="button item">00</li>
+            <li class="button item">.</li>
+            <li class="button item">+</li>
+            <li class="button item-d">=</li>
+            <li class="button item-cc"><|</li>
+            <li class="button item-c">C</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js" async defer></script>
+  </body>
+</html>

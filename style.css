@@ -1,0 +1,268 @@
+:root{
+   --main-colo:#17252A; 
+
+    --second-color:#2B7A78;
+    --acent-color: #3AAFA9;
+
+    --second-acent: #DEF2F1;
+    --grey:#9db3b2;
+    --white-color: #FEFFFF;    
+}
+button{
+padding: 0;
+margin: 0;
+background-color: transparent;
+border: none;
+}
+
+
+li{
+    list-style: none;
+}
+ul,li{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-colo);
+}
+
+ span,li,input,textarea{
+    font-size:1.5rem;
+    color: var(--main-colo);
+}
+.kalkulator{
+    display: flex;
+    background-color:var(--second-color);
+    padding: 30px ;
+
+    border-radius: 3px;
+
+    outline: 1px solid rgb(50, 50, 50);
+
+box-shadow: 9px 9px 0px 5px rgba(19, 24, 29, 0.6),
+9px 9px 15px 25px rgba(19, 24, 29, 0.6);
+;
+}
+
+
+
+/* kalk-kupur */
+.kalk-kupur{
+    width: 160px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-right: 15px;
+    padding: 20px 15px 0px 15px;
+
+    border-radius:2px ;
+
+    
+background-color: var(--second-color);
+
+box-shadow: 6px 6px 8px 2px rgba(34, 60, 80, 0.414) inset;
+
+outline: 2px solid rgba(34, 60, 80, 0.581);
+}
+
+.kalk-kupur .item{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.cupuru label{
+    display: inline-block;
+    position: absolute;
+    left: 10px;
+    top: -10px;
+    margin-left: 0;
+    font-size: 1rem;
+    color: var(--white-color);
+}
+.kalk-kupur .speedbuton{
+    margin: 10px;
+
+    border: 0;
+}
+
+
+
+
+
+
+
+input[type="number"] {
+    width: 50px;
+
+	background-color: var(--second-acent);
+
+	height: 32px;
+
+
+	text-indent: 10px;
+	font-size: 14px;
+	border-radius: 3px;
+
+	appearance: textfield;
+
+    box-shadow: inset 5px 3px 5px 0px #1d434278;
+} 
+
+
+/* kalk-kupur */
+
+/* calkulator */
+.calkulator{
+    width: 260px;
+    display: block;
+
+    padding: 10px 15px 10px 15px;
+    
+    border-radius: 2px;
+
+
+    background-color: var(--second-color);
+
+box-shadow: 6px 6px 6px 1px rgba(34, 60, 80, 0.414) inset;
+
+outline: 2px solid rgba(34, 60, 80, 0.581);
+
+}
+
+.calkulator ul{
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(4,50px);
+    grid-auto-rows: 50px;
+    gap: 10px;
+}
+
+
+
+
+.calkulator textarea{ 
+
+    resize: none;
+    border: 0;
+    height: 80px;
+}
+.item-d{
+    grid-column-start: span 2;
+}
+
+
+/* calkulator */
+
+/* result */
+
+.result span{
+    display: block;
+
+    padding: 5px 0px;
+
+    overflow:scroll hidden;
+
+
+    scrollbar-width:none;          
+
+    border-radius: 2px;
+}
+
+
+
+.result{    
+    background-color: var(--second-acent);
+    padding: 15px 0;
+
+    border-radius: 5px;
+
+
+box-shadow: inset 5px 3px 25px 0px #223e3d78
+, 4px 4px 0px 0px rgba(34, 60, 80, 0.414);
+
+}
+.result *{
+
+    width: 200px; 
+    text-indent: 10px;
+
+    color: var(--white-color);
+    
+    background-color:#1c1d1c ;
+
+    margin: 5px 10px;
+}
+
+
+/* result */
+
+
+.radio-group input[type=radio] {
+	display: none;
+}
+
+.radio-group .button {
+	padding: 0px 10px;
+    display: inline-block; 
+
+    width: 50px; 
+    height: 32px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+
+
+
+
+.button{
+      
+    user-select: none;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+    background-color: var(--white-color);
+    border-radius: 5px;
+    
+    
+box-shadow: inset 5px 3px 15px 0px #1d434278, 
+4px 4px 0px 0px rgba(34, 60, 80, 0.414);
+    
+    transition: .5s;
+}
+
+.button:hover{
+    transition: .2s;
+    
+    background-color: #cdd1d1;
+}
+
+.button:active, .radio-group input[type=radio]:checked + .button{
+    background-color: var(--grey);
+
+    box-shadow: 6px 6px 6px 0px rgba(34, 60, 80, 0.414) inset;
+    
+    transition: .2s;
+}
+
+
+
+
+
+
+
+
