@@ -86,3 +86,30 @@ const buttonCC = document.querySelector('.calkulator .buttons .item-cc').addEven
 
     
 
+
+
+
+
+
+
+
+
+
+
+
+const percentTab = document.querySelector('.percent')
+const showPercentTab = document.querySelector('.showtab')
+const closePercentTab = document.querySelector('.close')
+
+showPercentTab.addEventListener('click', function(){
+    if (!percentTab.classList.contains('show')){
+        console.log('show')
+        percentTab.classList.add('show')
+    }
+})
+closePercentTab.addEventListener('click', function(){
+    if (percentTab.classList.contains('show')){
+        console.log('hide')
+        percentTab.classList.remove('show')
+    }
+})
