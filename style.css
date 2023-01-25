@@ -119,6 +119,18 @@ input[type="number"] {
 } 
 
 
+input[type="number"] {
+	-moz-appearance: textfield;
+	-webkit-appearance: textfield;
+	appearance: textfield;
+}
+ 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	display: none;
+}
+
+
 /* kalk-kupur */
 
 /* calkulator */
@@ -165,15 +177,16 @@ outline: 2px solid rgba(34, 60, 80, 0.581);
 
 /* result */
 
+.result span::-webkit-scrollbar {
+    display: none; /*chrome*/
+  }
 .result span{
     display: block;
 
     padding: 5px 0px;
 
-    overflow:scroll hidden;
-
-
-    scrollbar-width:none;          
+    overflow:scroll hidden;        
+    scrollbar-width: none; /*mozilla*/
 
     border-radius: 2px;
 }

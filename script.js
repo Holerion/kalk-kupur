@@ -5,6 +5,7 @@ const kalkKupurAnswer = document.querySelector('.result #kalk-kupur')
 
 const items = document.querySelectorAll('.kalk-kupur .speedbuton')
 items.forEach(function(el){
+    ItemScroll(el);
     ItemChange(el);
     ItemClick(el);
 })
@@ -24,6 +25,20 @@ function ItemChange(el){
     })
 } 
 
+function ItemScroll(el){
+    el.addEventListener('wheel', function(event){              
+        var y = event.deltaY;
+        var currentSize = event.target.style.width;
+        if (y > 0) {
+            el.value--
+        } else {
+            el.value++
+        }      
+        SumKupuru();
+    })
+} 
+
+  
 const SumKupuru = function(){
     let sum = 0;
     for (let i = 0; i < items.length; i++)
