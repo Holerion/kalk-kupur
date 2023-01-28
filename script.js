@@ -113,3 +113,47 @@ closePercentTab.addEventListener('click', function(){
         percentTab.classList.remove('show')
     }
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const range = document.querySelector('#range')
+const label = document.querySelector('.percent #value')
+label.addEventListener("input",function(){
+    range.value=label.value    
+    label.style.left = `${range.value}%`
+})
+range.addEventListener("input",function(){
+    label.style.left = `${range.value}%`
+    label.value = `${range.value}`
+})
