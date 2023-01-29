@@ -28,7 +28,6 @@ function ItemChange(el){
 function ItemScroll(el){
     el.addEventListener('wheel', function(event){              
         var y = event.deltaY;
-        var currentSize = event.target.style.width;
         if (y > 0) {
             el.value--
         } else {
@@ -50,7 +49,7 @@ const SumKupuru = function(){
 
 document.querySelector('.radio #clear').addEventListener('click',function(){
     items.forEach(function(el ){
-        el.value='0'})
+        el.value=''})
         kalkKupurAnswer.innerHTML=`${0}`
         radioButtons[radioButtons.length-1].checked = true;
 })
@@ -64,9 +63,6 @@ document.querySelectorAll('.calkulator .buttons .item').forEach(el=>
         textArea.value += el.textContent
 })) 
 
-
-
-
 const buttonD = document.querySelector('.calkulator .buttons .item-d').addEventListener('click', function(){
     document.querySelector('.calkulator #answer').innerHTML= eval(textArea.value)
 })
@@ -79,12 +75,7 @@ const buttonC = document.querySelector('.calkulator .buttons .item-c').addEventL
 const buttonCC = document.querySelector('.calkulator .buttons .item-cc').addEventListener('click', function(){
     textArea.value= textArea.value.slice(0, -1);
 })
-
-
-
-
-
-    
+   
 
 
 
@@ -119,41 +110,27 @@ closePercentTab.addEventListener('click', function(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const range = document.querySelector('#range')
 const label = document.querySelector('.percent #value')
+const ProcentLabel = document.querySelector('.percent #procent')
+const ProcentSum = document.querySelector('.percent #procentSum')
+
 label.addEventListener("input",function(){
     range.value=label.value    
     label.style.left = `${range.value}%`
+
+    ProcentLabel.innerHTML=`${ProcentSum.value / 100*range.value}`
+
 })
 range.addEventListener("input",function(){
     label.style.left = `${range.value}%`
     label.value = `${range.value}`
+
+    ProcentLabel.innerHTML=`${ProcentSum.value / 100 *range.value}`
 })
+
+
+
+
+
+
