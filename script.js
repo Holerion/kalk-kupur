@@ -1,3 +1,5 @@
+const CheckButoon = document.querySelectorAll('input[name="current"]')
+const CheckButoonLabel = document.querySelectorAll('.checkbox-group label')
 
 const radioButtons = document.querySelectorAll('input[name="sidepanel"]');
 
@@ -10,6 +12,12 @@ items.forEach(function(el){
     ItemClick(el);
 })
 
+
+CheckButoonLabel.forEach(e =>{
+e.addEventListener('click' , function(){
+    SumKupuru();
+})})
+
 function ItemClick(el){
     el.addEventListener('click', function(){    
         radioButtons.forEach(function(e){  
@@ -20,7 +28,7 @@ function ItemClick(el){
     })
 } 
 function ItemChange(el){
-    el.addEventListener('change', function(){    
+    el.addEventListener('input', function(){    
         SumKupuru();
     })
 } 
@@ -38,12 +46,15 @@ function ItemScroll(el){
 } 
 
   
-const SumKupuru = function(){
+function SumKupuru(){
     let sum = 0;
-    for (let i = 0; i < items.length; i++)
+    for (let i = 0; i < items.length; i++)      
+        if(!CheckButoon[i].checked)
         sum+= +items[i].value* +items[i].dataset.nominal  
     kalkKupurAnswer.innerHTML=`${sum}`
 }
+
+
 
 
 
