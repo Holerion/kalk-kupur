@@ -1,0 +1,99 @@
+
+body {
+    $font-size: 20px;
+  
+    transition: 1s;
+    &.theme1 {
+  --main-color: #17252a;
+  --second-color: #2b7a78;
+  
+  --second-acent: #def2f1;
+  --grey: #9db3b2;
+  --white-color: #fff;
+  
+  --text-color:rgb(22, 22, 22);
+  
+  }
+  &.theme2 {
+    --main-color: #1b0505;
+    --second-color: #500606;
+  
+    --second-acent: #ffffff;
+    --grey: #627070;
+    --white-color: rgb(46, 46, 46);
+    
+    --text-color:rgb(148, 148, 148);
+  }
+  
+  &.theme3 {
+    --main-color: #a4af00;
+  
+    --second-color: #5a5c53;
+    
+    --second-acent: #b8bbbb;
+    --grey: #b6a400;
+    --white-color: rgb(22, 20, 20);
+  
+    --text-color:rgb(104, 101, 101);
+    }
+    
+  &.theme4 {
+      --main-color: #230041;
+  
+      --second-color: #0c002c;
+    
+      --second-acent: #800275;
+      --grey: #9f23c5;
+      --white-color: rgb(128, 17, 156);
+      --text-color:white;
+    }
+  &.theme5 {
+      --main-color: #520827;
+  
+      --second-color: #2b7a78;
+    
+      --second-acent: #def2f1;
+      --grey: #9db3b2;
+      --white-color: #fff;
+      --text-color:white;
+    }
+  &.theme6 {
+      --main-color: #3cff00;
+  
+      --second-color: #2b7a78;
+    
+      --second-acent: #def2f1;
+      --grey: #9db3b2;
+      --white-color: #fff;
+      --text-color:white;
+    }
+  &.theme7 {
+      --main-color: #3cff00;
+  
+      --second-color: #2b7a78;
+    
+      --second-acent: #def2f1;
+      --grey: #9db3b2;
+      --white-color: #fff;
+      --text-color:white;
+    }
+  &.theme8 {
+      --main-color: #3cff00;
+  
+      --second-color: #2b7a78;
+    
+      --second-acent: #def2f1;
+      --grey: #9db3b2;
+      --white-color: #fff;
+      --text-color:white;
+    }
+  
+    &.theme9 {
+      transition: 1s;
+      }
+    
+  
+  
+  
+  
+  }
