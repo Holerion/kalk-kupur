@@ -5,7 +5,7 @@ $font-size: 20px;
   transition: 1s;
   --main-color:white;
   --second-color: #2b7a78;
-  --acent-color: #3aafa9;
+
 
   --second-acent: #def2f1;
   --grey: #9db3b2;
@@ -29,52 +29,100 @@ li {
   list-style: none;
 }
 
+
+
+
 body {
   $font-size: 20px;
 
+  transition: 1s;
   &.theme1 {
-    transition: 1s;
 --main-color: #17252a;
 --second-color: #2b7a78;
---acent-color: #3aafa9;
 
 --second-acent: #def2f1;
 --grey: #9db3b2;
 --white-color: #fff;
 
+--text-color:rgb(2, 2, 2);
+
 }
 &.theme2 {
-  transition: 1s;
-  --main-color: #311010;
-  
-  --second-color: #7a2b2b;
-  --acent-color: #3aafa9;
+  --main-color: #1b0505;
+  --second-color: #500606;
 
-  --second-acent: #def2f1;
-  --grey: #9db3b2;
---white-color: #fff;
+  --second-acent: #788181;
+  --grey: #627070;
+  --white-color: rgb(46, 46, 46);
+  
+  --text-color:rgb(255, 255, 255);
 }
+
 &.theme3 {
-  transition: 1s;
-    --main-color: #3cff00;
+  --main-color: #eeff00;
+
+  --second-color: #5a5c53;
+  
+  --second-acent: #292e2e;
+  --grey: #b6a400;
+  --white-color: rgb(22, 20, 20);
+
+  --text-color:white;
+  }
+  
+&.theme4 {
+    --main-color: #230041;
+
+    --second-color: #0c002c;
+  
+    --second-acent: #800275;
+    --grey: #9f23c5;
+    --white-color: rgb(128, 17, 156);
+    --text-color:white;
+  }
+&.theme5 {
+    --main-color: #520827;
 
     --second-color: #2b7a78;
-    --acent-color: #3aafa9;
   
     --second-acent: #def2f1;
     --grey: #9db3b2;
     --white-color: #fff;
+    --text-color:white;
   }
+&.theme6 {
+    --main-color: #3cff00;
+
+    --second-color: #2b7a78;
+  
+    --second-acent: #def2f1;
+    --grey: #9db3b2;
+    --white-color: #fff;
+    --text-color:white;
+  }
+&.theme7 {
+    --main-color: #3cff00;
+
+    --second-color: #2b7a78;
+  
+    --second-acent: #def2f1;
+    --grey: #9db3b2;
+    --white-color: #fff;
+    --text-color:white;
+  }
+&.theme8 {
+    --main-color: #3cff00;
+
+    --second-color: #2b7a78;
+  
+    --second-acent: #def2f1;
+    --grey: #9db3b2;
+    --white-color: #fff;
+    --text-color:white;
+  }
+
   &.theme9 {
     transition: 1s;
-      --main-color: #3cff00;
-  
-      --second-color: #2b7a78;
-      --acent-color: #3aafa9;
-    
-      --second-acent: #def2f1;
-      --grey: #9db3b2;
-      --white-color: #fff;
     }
   
 
@@ -95,7 +143,7 @@ body{
   input,
   textarea {
     font-size: 1.2rem;
-    color: var(--main-color);
+    color: var(--text-color);
   }
 
   main {
@@ -148,7 +196,7 @@ body{
       top: -2px;
       text-shadow: 2px 2px 5px black;
       font-size: 0.9rem;
-      color: var(--white-color);
+      color: var(--text-color);
 
       transition: 0.2s;
     }
@@ -197,7 +245,7 @@ body{
   }
   .tabs .tab-item.active {
     background-color: var(--main-color);
-    color: var(--white-color);
+    color: var(--text-color);
   }
 
   /* kalk-kupur */
@@ -245,7 +293,7 @@ body{
       width: 200px;
       text-indent: 10px;
 
-      color: var(--white-color);
+      color: var(--text-color);
 
       background-color: #1c1d1c;
 
@@ -284,6 +332,7 @@ body{
   }
 
   .button {
+    color: var(--text-color);
     user-select: none;
     cursor: pointer;
 

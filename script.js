@@ -237,7 +237,7 @@ function setColor(){
     const body = document.querySelector('body.theme9')
     body.style.setProperty("--main-color"  , `${colorInput[0].value}`)
     body.style.setProperty("--second-color", `${colorInput[1].value}`)
-    body.style.setProperty("--acent-color" , `${colorInput[2].value}`)
+    body.style.setProperty("--text-color"  , `${colorInput[2].value}`)
     body.style.setProperty("--second-acent", `${colorInput[3].value}`)
     body.style.setProperty("--grey"        , `${colorInput[4].value}`)
     body.style.setProperty("--white-color" , `${colorInput[5].value}`)  
