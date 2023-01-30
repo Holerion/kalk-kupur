@@ -243,3 +243,33 @@ function setColor(){
     body.style.setProperty("--white-color" , `${colorInput[5].value}`)  
     
 }
+
+
+
+
+
+
+
+
+
+
+    let formData={};
+    const LS= localStorage;
+    const body = document.querySelector('body')
+    body.addEventListener('input', function(event){
+        formData[event.target.name] = event.target.value;
+        LS.setItem('formData', JSON.stringify(formData));    
+    });
+
+    if (LS.getItem('formData')){
+        formData=JSON.parse(LS.getItem('formData'));
+        for(let key in formData){
+            let el = document.querySelector(key)
+            if(el.type ==='checkbox' && formData[key]==='on'){
+                el.checked = true;
+            }else{
+                el.value = formData[key]
+            }
+        }
+    }
+
