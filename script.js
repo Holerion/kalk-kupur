@@ -1,6 +1,3 @@
-const CheckButoon = document.querySelectorAll('input[name="current"]')
-const CheckButoonLabel = document.querySelectorAll('.checkbox-group label')
-
 const radioButtons = document.querySelectorAll('input[name="sidepanel"]');
 
 const kalkKupurAnswer = document.querySelector('.result #kalk-kupur')
@@ -13,17 +10,8 @@ items.forEach(function(el){
 })
 
 
-CheckButoonLabel.forEach(e =>{
-e.addEventListener('click' , function(){
-    SumKupuru();
-})})
-
 function ItemClick(el){
-    el.addEventListener('click', function(){    
-        radioButtons.forEach(function(e){  
-            if (e.checked && e.dataset.value!=0)
-                el.value = e.dataset.value;       
-            })
+    el.addEventListener('click', function(){         
         SumKupuru();
     })
 } 
@@ -48,22 +36,79 @@ function ItemScroll(el){
   
 function SumKupuru(){
     let sum = 0;
+
     for (let i = 0; i < items.length; i++)      
-        if(!CheckButoon[i].checked)
-        sum+= +items[i].value* +items[i].dataset.nominal  
+        if(!CheckButoon[i].checked){            
+            sum+= +items[i].value* +items[i].dataset.nominal  
+        }
+
     kalkKupurAnswer.innerHTML=`${sum}`
 }
 
+const CheckButoon = document.querySelectorAll('input[name="current"]')
+const CheckButoonLabel = document.querySelectorAll('.checkbox-group label')
+CheckButoonLabel.forEach(function(e,i){
+    e.addEventListener('click' , function(){
+        setTimeout(function(){
+            SumKupuru();
+        }, 1);
+})})
 
 
 
 
-document.querySelector('.radio #clear').addEventListener('click',function(){
+
+function clearInput(){
     items.forEach(function(el ){
         el.value=''})
         kalkKupurAnswer.innerHTML=`${0}`
-        radioButtons[radioButtons.length-1].checked = true;
+}
+
+function clearCheckbox(){
+    CheckButoon.forEach(function(el ){
+        el.checked=false})
+    SumKupuru()    
+}
+
+
+const dataSave = document.querySelectorAll('.buttons-group input[name="dataSave"]')
+let previos = 0;
+dataSave.forEach(function(el,i){
+    el.addEventListener('click', function(){
+        items.forEach(e=>{
+            
+            switch (previos) {
+            case 0:
+                e.dataset.save1=e.value;
+                break;
+            case 1:
+                e.dataset.save2=e.value;
+                break;
+            case 2:
+                e.dataset.save3=e.value;
+                break;                  
+        }
+
+        switch (i) {
+            case 0:
+                e.value=e.dataset.save1;
+                break;
+            case 1:
+                e.value=e.dataset.save2;
+                break;
+            case 2:
+                e.value=e.dataset.save3;
+                break;  
+        }})        
+        previos=i;
+
+        SumKupuru();
+    })
+
 })
+
+
+
 
 
 
@@ -99,22 +144,12 @@ const buttonCC = document.querySelector('.calkulator .buttons .item-cc').addEven
 
 
 
-const percentTab = document.querySelector('.percent')
-const showPercentTab = document.querySelector('.showtab')
-const closePercentTab = document.querySelector('.close')
 
-showPercentTab.addEventListener('click', function(){
-    if (!percentTab.classList.contains('show')){
-        console.log('show')
-        percentTab.classList.add('show')
-    }
-})
-closePercentTab.addEventListener('click', function(){
-    if (percentTab.classList.contains('show')){
-        console.log('hide')
-        percentTab.classList.remove('show')
-    }
-})
+
+function ProcentPanelShow(){
+    document.querySelector('.percent').classList.toggle('show')
+}
+
 
 
 
@@ -126,22 +161,43 @@ const label = document.querySelector('.percent #value')
 const ProcentLabel = document.querySelector('.percent #procent')
 const ProcentSum = document.querySelector('.percent #procentSum')
 
+function labelSet(){
+    label.style.left = `${range.value*1.65}px`
+    ProcentLabel.innerHTML=`${ProcentSum.value / 100*range.value}`
+}
 label.addEventListener("input",function(){
     range.value=label.value    
-    label.style.left = `${range.value}%`
 
-    ProcentLabel.innerHTML=`${ProcentSum.value / 100*range.value}`
-
+    labelSet()
 })
 range.addEventListener("input",function(){
-    label.style.left = `${range.value}%`
     label.value = `${range.value}`
 
-    ProcentLabel.innerHTML=`${ProcentSum.value / 100 *range.value}`
+    labelSet()
 })
 
+function SetPercent(e){
+    range.value= +e.textContent 
+    label.value= +e.textContent 
+    labelSet()
+}
 
 
 
 
+function TemeShow(){
+    document.querySelector('.theme-switcher').classList.toggle('show')
+}
+function DailyCasaShow(){
+    document.querySelector('.daily-casa').classList.toggle('show')
+}
 
+
+
+
+const DayliCasaInputs= document.querySelectorAll('#DayliCasa') 
+DayliCasaInputs.forEach(function(el){
+    el.addEventListener('input',function(){
+        document.querySelector('.daily-casa #rezult').innerHTML=`${+DayliCasaInputs[1].value+ +DayliCasaInputs[2].value - +DayliCasaInputs[3].value - +DayliCasaInputs[0].value }` 
+    })
+})

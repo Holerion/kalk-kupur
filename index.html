@@ -19,56 +19,48 @@
     <main>
       <div class="kalkulator">
         <div class="kalk-kupur">
-          <ul class="tabs">
-            <li class="tab-item active">1</li>
-            <li class="tab-item">2</li>
-            <li class="tab-item">3</li>
-          </ul>
 
           <div class="grid">
             <ul class="checkbox-group curent-shell">
               <li class="checkbox-item">
-                <input id="shell-1" type="checkbox" name="current" data-value="1" />
-                <label class="button" for="shell-1"> ></label>
+                <input id="shell-1" type="checkbox" name="current" />
+                <label class="button" for="shell-1" ><span>></span> </label>
               </li>
               <li class="checkbox-item">
-                <input id="shell-2" type="checkbox" name="current" data-value="2" />
-                <label class="button" for="shell-2"> ></label>
+                <input id="shell-2" type="checkbox" name="current" />
+                <label class="button" for="shell-2"><span>></span> </label>
               </li>
               <li class="checkbox-item">
-                <input id="shell-3" type="checkbox" name="current" data-value="3" />
-                <label class="button" for="shell-3"> ></label>
+                <input id="shell-3" type="checkbox" name="current" />
+                <label class="button" for="shell-3"><span>></span> </label>
               </li>
               <li class="checkbox-item">
-                <input id="shell-4" type="checkbox" name="current" data-value="4" />
-                <label class="button" for="shell-4"> ></label>
+                <input id="shell-4" type="checkbox" name="current" />
+                <label class="button" for="shell-4"><span>></span> </label>
               </li>
               <li class="checkbox-item">
-                <input id="shell-5" type="checkbox" name="current" data-value="5" />
-                <label class="button" for="shell-5"> ></label>
+                <input id="shell-5" type="checkbox" name="current" />
+                <label class="button" for="shell-5"><span>></span> </label>
               </li>
               <li class="checkbox-item">
-                <input id="shell-6" type="checkbox" name="current" data-value="6" />
-                <label class="button" for="shell-6"> ></label>
+                <input id="shell-6" type="checkbox" name="current" />
+                <label class="button" for="shell-6"><span>></span> </label>
               </li>
               <li class="checkbox-item">
-                <input id="shell-7" type="checkbox" name="current" data-value="7" />
-                <label class="button" for="shell-7"> ></label>
+                <input id="shell-7" type="checkbox" name="current" />
+                <label class="button" for="shell-7"><span>></span> </label>
               </li>
               <li class="checkbox-item">
-                <input id="shell-8" type="checkbox" name="current" data-value="8" />
-                <label class="button" for="shell-8"> ></label>
+                <input id="shell-8" type="checkbox" name="current" />
+                <label class="button" for="shell-8"><span>></span> </label>
               </li>
               <li class="checkbox-item">
-                <input id="shell-9" type="checkbox" name="current" data-value="9 " checked />
-                <label class="button" for="shell-9"> > </label>
+                <input id="shell-9" type="checkbox" name="current" />
+                <label class="button" for="shell-9"><span>></span>  </label>
               </li>
               <li class="checkbox-item">
-                <input id="shell-10" type="checkbox" name="current" data-value="10 " checked />
-                <label class="button" for="shell-10"> > </label>
-              </li>
-              <li class="checkbox">
-                <button class="button" id="ClearCheckBox">C</button>
+                <input id="shell-10" type="checkbox" name="current" />
+                <label class="button" for="shell-10"><span>></span>  </label>
               </li>
             </ul>
 
@@ -80,89 +72,104 @@
                   value="0"
                   id="K1000"
                   type="number"
-                  data-nominal="1000"
+                  data-save1="0" data-save2="0" data-save3="0" data-nominal="1000"
                   class="input"
                 />
                 <label for="K1000">1000</label>
               </li>
               <li class="item">
-                <input class="speedbuton" placeholder="500" value="0" id="K500" type="number" data-nominal="500" class="input" />
+                <input class="speedbuton" placeholder="500" value="0" id="K500" type="number" data-save1="0" data-save2="0" data-save3="0" data-nominal="500" class="input" />
                 <label for="K500">500</label>
               </li>
               <li class="item">
-                <input class="speedbuton" placeholder="200" value="0" id="K200" type="number" data-nominal="200" class="input" />
+                <input class="speedbuton" placeholder="200" value="0" id="K200" type="number" data-save1="0" data-save2="0" data-save3="0" data-nominal="200" class="input" />
                 <label for="K200">200</label>
               </li>
               <li class="item">
-                <input class="speedbuton" placeholder="100" value="0" id="K100" type="number" data-nominal="100" class="input" />
+                <input class="speedbuton" placeholder="100" value="0" id="K100" type="number" data-save1="0" data-save2="0" data-save3="0" data-nominal="100" class="input" />
                 <label for="K100">100</label>
               </li>
               <li class="item">
-                <input class="speedbuton" placeholder="50" value="0" id="K50" type="number" data-nominal="50" class="input" />
+                <input class="speedbuton" placeholder="50" value="0" id="K50" type="number" data-save1="0" data-save2="0" data-save3="0" data-nominal="50" class="input" />
                 <label for="K50">50</label>
               </li>
               <li class="item">
-                <input class="speedbuton" placeholder="20" value="0" id="K20" type="number" data-nominal="20" class="input" />
+                <input class="speedbuton" placeholder="20" value="0" id="K20" type="number" data-save1="0" data-save2="0" data-save3="0" data-nominal="20" class="input" />
                 <label for="K20">20</label>
               </li>
               <li class="item">
-                <input class="speedbuton" placeholder="10" value="0" id="K10" type="number" data-nominal="10" class="input" />
+                <input class="speedbuton" placeholder="10" value="0" id="K10" type="number" data-save1="0" data-save2="0" data-save3="0" data-nominal="10" class="input" />
                 <label for="K10">10</label>
               </li>
               <li class="item">
-                <input class="speedbuton" placeholder="5" value="0" id="K5" type="number" data-nominal="5" class="input" />
+                <input class="speedbuton" placeholder="5" value="0" id="K5" type="number" data-save1="0" data-save2="0" data-save3="0" data-nominal="5" class="input" />
                 <label for="K5">5</label>
               </li>
               <li class="item">
-                <input class="speedbuton" placeholder="2" value="0" id="K2" type="number" data-nominal="2" class="input" />
+                <input class="speedbuton" placeholder="2" value="0" id="K2" type="number" data-save1="0" data-save2="0" data-save3="0" data-nominal="2" class="input" />
                 <label for="K2">2</label>
               </li>
               <li class="item">
-                <input class="speedbuton" placeholder="1" value="0" id="K1" type="number" data-nominal="1" class="input" />
+                <input class="speedbuton" placeholder="1" value="0" id="K1" type="number" data-save1="0" data-save2="0" data-save3="0" data-nominal="1" class="input" />
                 <label for="K1">1</label>
               </li>
             </ul>
 
-            <ul class="radio-group">
-              <li class="radio-item">
-                <input id="radio-1" type="radio" name="sidepanel" data-value="15" />
-                <label class="button" for="radio-1"> 15</label>
+            <ul class="buttons-group">
+              <li class="checkbox-item">
+                <input id="dataSave1" type="radio" name="dataSave" checked/>
+                <label class="button" for="dataSave1" "><span>T1</span> </label>
               </li>
-              <li class="radio-item">
-                <input id="radio-2" type="radio" name="sidepanel" data-value="20" />
-                <label class="button" for="radio-2"> 20</label>
+              <li class="checkbox-item">
+                <input id="dataSave2" type="radio" name="dataSave" />
+                <label class="button" for="dataSave2" "><span>T2</span> </label>
               </li>
-              <li class="radio-item">
-                <input id="radio-3" type="radio" name="sidepanel" data-value="25" />
-                <label class="button" for="radio-3"> 25</label>
+              <li class="checkbox-item">
+                <input id="dataSave3" type="radio" name="dataSave" />
+                <label class="button" for="dataSave3" "><span>T3</span> </label>
               </li>
-              <li class="radio-item">
-                <input id="radio-4" type="radio" name="sidepanel" data-value="30" />
-                <label class="button" for="radio-4"> 30</label>
+              <!-- Tabs -->
+
+
+
+              <li>
+                <button class="button" id="clearInput" onclick="clearInput()">CI</button>
+                <!-- Clear Input -->
               </li>
-              <li class="radio-item">
-                <input id="radio-5" type="radio" name="sidepanel" data-value="35" />
-                <label class="button" for="radio-5"> 35</label>
+
+              <li>
+                <button class="button" id="clearCheckbox" onclick="clearCheckbox()">CC</button>
+                <!-- Clear Checkbox -->
               </li>
-              <li class="radio-item">
-                <input id="radio-6" type="radio" name="sidepanel" data-value="40" />
-                <label class="button" for="radio-6"> 40</label>
+
+              <li>
+                <button class="button" id="clearInput" onclick="ProcentPanelShow(), labelSet()">%</button>
+                <!-- % -->
               </li>
-              <li class="radio-item">
-                <input id="radio-7" type="radio" name="sidepanel" data-value="45" />
-                <label class="button" for="radio-7"> 45</label>
+
+
+
+              <li>
+                <button class="button" id="clearCheckbox" onclick="DailyCasaShow()">DC</button>
+                <!-- каса за день -->
               </li>
-              <li class="radio-item">
-                <input id="radio-8" type="radio" name="sidepanel" data-value="50" />
-                <label class="button" for="radio-8"> 50</label>
+
+              <li>
+                <button class="button" id="clearCheckbox" onclick="clearCheckbox()">nn</button>
+                <!--  -->
+              </li>              
+              <li>
+                <button class="button" id="clearCheckbox" onclick="clearCheckbox()">nn</button>
+                <!--  -->
+              </li>              
+              <li>
+                <button class="button" id="clearCheckbox" onclick="TemeShow()">TS</button>
+                <!-- theme switcher -->
               </li>
-              <li class="radio-item">
-                <input id="radio-9" type="radio" name="sidepanel" data-value="0 " checked />
-                <label class="button" for="radio-9"> 0 </label>
-              </li>
-              <li class="radio">
-                <button class="button" id="clear">C</button>
-              </li>
+
+
+
+
             </ul>
           </div>
         </div>
@@ -201,23 +208,92 @@
       </div>
 
       <div class="dop-info">
-        <div class="percent">
-          <div class="container-pecent">
-            <div class="close"><i class="fa-solid fa-xmark"></i></div>
-            <div class="content">
+        <div class="percent ">
+            <div class="content" >
 
-              <button class="showtab">Процент</button>
-              <input type="number" id="procentSum">
+              <input type="number" id="procentSum" oninput="labelSet()" >
               <div class="range">
-                <input id="range" type="range" value="100" />
+                <input id="range" type="range" value="0" max="100" min="0" />
                 <input type="number" id="value" class="label" />
               </div>
-
-
-              <h1 id="procent">0</h1>
+              <span id="procent" class="input">0</span>
+              <ul class="group-buttons-procent grid">
+                <li><button class="button" onclick="SetPercent(this)">5</button></li>
+                <li><button class="button" onclick="SetPercent(this)">10</button></li>
+                <li><button class="button" onclick="SetPercent(this)">15</button></li>
+                <li><button class="button" onclick="SetPercent(this)">20</button></li>
+                <li><button class="button" onclick="SetPercent(this)">25</button></li>
+                <li><button class="button" onclick="SetPercent(this)">30</button></li>
+                <li><button class="button" onclick="SetPercent(this)">35</button></li>
+                <li><button class="button" onclick="SetPercent(this)">40</button></li>
+                <li><button class="button" onclick="SetPercent(this)">45</button></li>
+                <li><button class="button" onclick="SetPercent(this)">50</button></li>
+                <li><button class="button" onclick="SetPercent(this)">55</button></li>
+                <li><button class="button" onclick="SetPercent(this)">60</button></li>
+                <li><button class="button" onclick="SetPercent(this)">65</button></li>
+                <li><button class="button" onclick="SetPercent(this)">70</button></li>
+                <li><button class="button" onclick="SetPercent(this)">75</button></li>
+                <li><button class="button" onclick="SetPercent(this)">80</button></li>
+                <li><button class="button" onclick="SetPercent(this)">85</button></li>
+                <li><button class="button" onclick="SetPercent(this)">90</button></li>
+                <li><button class="button" onclick="SetPercent(this)">95</button></li>
+                <li><button class="button" onclick="SetPercent(this)">100</button></li>
+              </ul>
             </div>
-          </div>
         </div>
+
+
+
+
+
+
+        <div class="theme-switcher show">
+
+          <ul class="buttons-group">
+            <li class="checkbox-item">
+              <input id="theme-box-1" type="radio" name="theme-item" checked/>
+            <label class="button" for="theme-box-1"> </label>
+          </li>
+          <li class="checkbox-item">
+            <input id="theme-box-2" type="radio" name="theme-item" />
+            <label class="button" for="theme-box-2"> </label>
+          </li>
+          <li class="checkbox-item">
+            <input id="theme-box-3" type="radio" name="theme-item" />
+            <label class="button" for="theme-box-3"> </label>
+          </li>
+        </ul>
+                    
+
+        </div>
+
+        <div class="daily-casa ">
+          <div class="content">
+
+            <span>Початкова каса</span>
+            <input type="number" id="DayliCasa">
+
+          <span>Каса готівкою</span>
+          <input type="number" id="DayliCasa">
+
+          <span>Оплата картою</span>
+          <input type="number" id="DayliCasa">
+          
+          <span>Не враховувати</span>
+          <input type="number" id="DayliCasa">
+          
+          <span>Каса за день</span>
+
+          <span id="rezult" class="input">0</span>
+        </div>
+        </div>
+
+
+
+
+
+
+
       </div>
     </main>
 
