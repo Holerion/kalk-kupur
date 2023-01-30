@@ -44,30 +44,30 @@ body {
 --grey: #9db3b2;
 --white-color: #fff;
 
---text-color:rgb(2, 2, 2);
+--text-color:rgb(22, 22, 22);
 
 }
 &.theme2 {
   --main-color: #1b0505;
   --second-color: #500606;
 
-  --second-acent: #788181;
+  --second-acent: #ffffff;
   --grey: #627070;
   --white-color: rgb(46, 46, 46);
   
-  --text-color:rgb(255, 255, 255);
+  --text-color:rgb(148, 148, 148);
 }
 
 &.theme3 {
-  --main-color: #eeff00;
+  --main-color: #a4af00;
 
   --second-color: #5a5c53;
   
-  --second-acent: #292e2e;
+  --second-acent: #b8bbbb;
   --grey: #b6a400;
   --white-color: rgb(22, 20, 20);
 
-  --text-color:white;
+  --text-color:rgb(104, 101, 101);
   }
   
 &.theme4 {
@@ -132,7 +132,7 @@ body {
 }
 body{
 
-  height: 100vh;
+  height: 1000px;
   background-color:  var(--main-color);
   @include flex(row);
 
@@ -196,7 +196,7 @@ body{
       top: -2px;
       text-shadow: 2px 2px 5px black;
       font-size: 0.9rem;
-      color: var(--text-color);
+      color:  var(--second-acent);
 
       transition: 0.2s;
     }
@@ -287,6 +287,8 @@ body{
     span {
       overflow: scroll hidden;
       scrollbar-width: none; /*mozilla*/
+      
+      color: var(--second-acent);
     }
 
     * {
@@ -307,7 +309,9 @@ body{
       resize: none;
       border: 0;
       height: 80px;
+      color:  var(--second-acent);
     }
+    
   }
 
   /* result */
