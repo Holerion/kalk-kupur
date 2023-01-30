@@ -201,3 +201,45 @@ DayliCasaInputs.forEach(function(el){
         document.querySelector('.daily-casa #rezult').innerHTML=`${+DayliCasaInputs[1].value+ +DayliCasaInputs[2].value - +DayliCasaInputs[3].value - +DayliCasaInputs[0].value }` 
     })
 })
+
+
+
+
+
+const themeButtons =document.querySelectorAll('.theme-switcher .checkbox-item')
+const colorInput =document.querySelectorAll('.theme-switcher input[type=color]')
+function addBodyTheme(){
+    document.querySelector('body').className = '';
+    document.querySelector('body').style = '';
+    themeButtons.forEach(e=>{
+        setTimeout(() => {
+
+            if (e.firstElementChild.checked) {
+                document.querySelector('.switcher-advanced').classList.remove('show')
+                document.querySelector('body').classList.add(`${e.lastElementChild.dataset.theme}`)
+                
+                if (e.lastElementChild.dataset.theme=='theme9'){
+                    document.querySelector('.switcher-advanced').classList.add('show')
+                    setColor();
+                }
+            }
+        },0);
+        })
+    }
+
+colorInput.forEach(e=>{
+    e.addEventListener('input', function(){
+        setColor();
+    })
+})
+
+function setColor(){
+    const body = document.querySelector('body.theme9')
+    body.style.setProperty("--main-color"  , `${colorInput[0].value}`)
+    body.style.setProperty("--second-color", `${colorInput[1].value}`)
+    body.style.setProperty("--acent-color" , `${colorInput[2].value}`)
+    body.style.setProperty("--second-acent", `${colorInput[3].value}`)
+    body.style.setProperty("--grey"        , `${colorInput[4].value}`)
+    body.style.setProperty("--white-color" , `${colorInput[5].value}`)  
+    
+}

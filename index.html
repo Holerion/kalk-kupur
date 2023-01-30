@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" href="./style/css/style.min.css" />
   </head>
-  <body>
+  <body onload="addBodyTheme()" class="">
     <main>
       <div class="kalkulator">
         <div class="kalk-kupur">
@@ -252,15 +252,62 @@
           <ul class="buttons-group">
             <li class="checkbox-item">
               <input id="theme-box-1" type="radio" name="theme-item" checked/>
-            <label class="button" for="theme-box-1"> </label>
+            <label class="button" for="theme-box-1" data-theme="theme1" onclick="addBodyTheme()" > </label>
           </li>
           <li class="checkbox-item">
             <input id="theme-box-2" type="radio" name="theme-item" />
-            <label class="button" for="theme-box-2"> </label>
+            <label class="button" for="theme-box-2" data-theme="theme2" onclick="addBodyTheme()" > </label>
           </li>
           <li class="checkbox-item">
             <input id="theme-box-3" type="radio" name="theme-item" />
-            <label class="button" for="theme-box-3"> </label>
+            <label class="button" for="theme-box-3" data-theme="theme3" onclick="addBodyTheme()" > </label>
+          </li>
+
+          <li class="checkbox-item">
+            <input id="theme-box-4" type="radio" name="theme-item" />
+            <label class="button" for="theme-box-4" data-theme="theme4" onclick="addBodyTheme()" > </label>
+          </li>
+          <li class="checkbox-item">
+            <input id="theme-box-5" type="radio" name="theme-item" />
+            <label class="button" for="theme-box-5" data-theme="theme5" onclick="addBodyTheme()" > </label>
+          </li>
+          <li class="checkbox-item">
+            <input id="theme-box-6" type="radio" name="theme-item" />
+            <label class="button" for="theme-box-6" data-theme="theme6" onclick="addBodyTheme()" > </label>
+          </li>
+          <li class="checkbox-item">
+            <input id="theme-box-7" type="radio" name="theme-item" />
+            <label class="button" for="theme-box-7" data-theme="theme7" onclick="addBodyTheme()" > </label>
+          </li>
+          <li class="checkbox-item">
+            <input id="theme-box-8" type="radio" name="theme-item" />
+            <label class="button" for="theme-box-8" data-theme="theme8" onclick="addBodyTheme()" > </label>
+          </li>
+          <li class="checkbox-item">
+            <input id="theme-box-9" type="radio" name="theme-item" />
+            <label class="button" for="theme-box-9" data-theme="theme9" onclick="addBodyTheme()" > </label>
+          </li>
+        </ul>
+
+
+        <ul class="switcher-advanced">
+          <li>
+            <input type="color" name="main-color" id="main-color">
+          </li>
+          <li>
+            <input type="color" name="second-color" id="second-color">
+          </li>
+          <li>
+            <input type="color" name="acent-color" id="acent-color">
+          </li>
+          <li>
+            <input type="color" name="second-acent" id="second-acent">
+          </li>
+          <li>
+            <input type="color" name="grey" id="grey">
+          </li>
+          <li>
+            <input type="color" name="white-color" id="white-color">
           </li>
         </ul>
                     
