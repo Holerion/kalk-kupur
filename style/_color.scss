@@ -1,21 +1,42 @@
 :root {
-  --main-color: white;
+  --main-color: #17252a;
   --second-color: #2b7a78;
 
-  --second-acent: #def2f1;
-  --grey: #9db3b2;
-  --white-color: #fff;
-  --text-color: rgb(22, 22, 22);
+  --calculator-color: #def2f1;
+  --label-color: #def2f1;
+
+  --button-text-color: #def2f1;
+  --speeduton-color: #def2f1;
+
+  --active-color: #9db3b2;
+  --button-color: #fff;
+
+  --zapas-color: black;
 }
 
 body {
   background-color: var(--main-color);
-  span,
-  li,
-  input,
-  textarea {
-    color: var(--text-color);
+  
+  span{
+    color: var(--label-color);
   }
+
+  .checkbox-group span,
+  .save span
+  {
+      color: var(--button-text-color);
+    }
+  
+  
+  input{
+    color: (--zapas-color);
+  }
+  li,
+  textarea {
+    color: var(--button-text-color);
+  }
+
+
 }
 
 .kalkulator {
@@ -23,70 +44,67 @@ body {
 }
 
 .kalk-kupur {
-  background-color: var(--second-color);
 
   .cupuru label {
-    color: var(--second-acent);
+    color: var(--label-color);
   }
-}
 
-@mixin inputStyle() {
-  background-color: var(--second-acent);
-}
-
-.tabs {
-  background-color: var(--second-acent);
-}
-
-.tabs .tab-item.active {
-  background-color: var(--main-color);
-  color: var(--text-color);
 }
 
 /* kalk-kupur */
 
 .result {
-  background-color: var(--second-acent);
+  background-color: var(--calculator-color);
 
-  span {
-    color: var(--second-acent);
+  span,
+  textarea {
+    color: var(--calculator-color);
   }
 
   * {
-    color: var(--text-color);
     background-color: #1c1d1c;
   }
 
-  textarea {
-    color: var(--second-acent);
-  }
 }
 
 .button {
-  color: var(--text-color);
-  background-color: var(--white-color);
+  color: var(--button-text-color);
+  background-color: var(--button-color);
 }
 
 .button:hover {
-  background-color: var(--grey);
+  background-color: var(--active-color);
 }
 
 .button:active,
 .buttons-group input[type="radio"]:checked + .button,
 .checkbox-group input[type="checkbox"]:checked + .button {
-  background-color: var(--grey);
+  background-color: var(--active-color);
 }
 
 /* dop-info */
 
 .percent {
   background-color: var(--second-color);
+
+  span{
+    background-color:var(--calculator-color) ;
+    color: var(--label-color);
+  }
+}
+
+.speedbuton,
+.daily-casa input ,
+ span#rezult,
+ #procentSum
+{
+  background-color: var(--calculator-color);
 }
 /* range */
 
 .percent .label {
   background-color: var(--main-color);
-  color: var(--second-acent);
+  color: var(--label-color);
 }
 
 .theme-switcher {

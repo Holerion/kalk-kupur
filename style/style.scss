@@ -114,11 +114,11 @@ max-height: 590px;
   .curent-shell radio-item label {
     @include flex(row);
   }
+  input[type="number"] {
+    @include inputStyle();
+  }
 }
 
-input[type="number"] {
-  @include inputStyle();
-}
 
 /* kalk-kupur */
 
@@ -262,8 +262,17 @@ input[type="number"] {
     transform: translateX(-240px) ;
     transition: 1s;
   }
-  input{
+  input{    
     appearance: textfield;
+    width: 190px;
+
+    &#procentSum{
+      @include inputStyle;
+    }
+
+    &#value{
+      font-size: 0.8rem;
+    }
   }
 
 
@@ -302,7 +311,7 @@ transform:translateY(200px);
   }
 
   .switcher-advanced {
-    @include grid(2);
+    @include grid(3);
     gap: 7px 5px;
 
     width: 120px;
@@ -321,12 +330,12 @@ transform:translateY(200px);
       transform: translateY(0px);
     }
     li {
-      width: 40px;
+      width: 30px;
       height: 40px;
 
       input {
         background-color: #000000;
-        width: 40px;
+        width: 30px;
         height: 38px;
       }
     }

@@ -1,4 +1,5 @@
 const radioButtons = document.querySelectorAll('input[name="sidepanel"]');
+const CheckButoon = document.querySelectorAll('input[name="current"]')
 
 const kalkKupurAnswer = document.querySelector(".result #kalk-kupur");
 
@@ -145,7 +146,7 @@ const ProcentLabel = document.querySelector(".percent #procent");
 const ProcentSum = document.querySelector(".percent #procentSum");
 
 function labelSet() {
-  label.style.left = `${range.value * 1.65}px`;
+  label.style.left = `${range.value * 1.55}px`;
   ProcentLabel.innerHTML = `${(ProcentSum.value / 100) * range.value}`;
 }
 label.addEventListener("input", function () {
@@ -205,9 +206,12 @@ colorInput.forEach((e) => {
 function setColor() {
   const body = document.querySelector("body.theme9").style;
 
-  let colorArr = ["--main-color", "--second-color", "--text-color", "--second-acent", "--grey", "--white-color"];
+  let colorArr = document.querySelectorAll('.switcher-advanced input[type="color"]');
+  
+  
+  
   for (let i = 0; i < colorArr.length; i++) {
-    body.setProperty(colorArr[i], `${colorInput[i].value}`);
+    body.setProperty(colorArr[i].name, `${colorInput[i].value}`);
   }
 }
 

@@ -4,14 +4,31 @@ body {
   
     transition: 1s;
     &.theme1 {
+  // --main-color: #17252a;
+  // --second-color: #2b7a78;
+  
+  // --second-acent: #def2f1;
+  // --grey: #9db3b2;
+  // --white-color: #fff;
+  
+  // --text-color:rgb(22, 22, 22);
+
+
+
+
   --main-color: #17252a;
   --second-color: #2b7a78;
-  
-  --second-acent: #def2f1;
-  --grey: #9db3b2;
-  --white-color: #fff;
-  
-  --text-color:rgb(22, 22, 22);
+
+  --calculator-color: #def2f1;
+  --label-color: #def2f1;
+
+  --button-text-color: #000000;
+  --speeduton-color: #def2f1;
+
+  --active-color: #9db3b2;
+  --button-color: #fff;
+
+  --zapas-color: black;
   
   }
   &.theme2 {
