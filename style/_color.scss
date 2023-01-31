@@ -14,44 +14,27 @@
   --zapas-color: black;
 }
 
+
+
 body {
   background-color: var(--main-color);
-  
-  span{
-    color: var(--label-color);
-  }
+}
 
   .checkbox-group span,
-  .save span
-  {
-      color: var(--button-text-color);
-    }
-  
-  
-  input{
-    color: (--zapas-color);
-  }
+  .save span,
   li,
   textarea {
     color: var(--button-text-color);
   }
 
 
-}
 
-.kalkulator {
-  background-color: var(--second-color);
-}
 
-.kalk-kupur {
-
-  .cupuru label {
+.kalk-kupur .cupuru label ,
+span{
     color: var(--label-color);
-  }
-
 }
 
-/* kalk-kupur */
 
 .result {
   background-color: var(--calculator-color);
@@ -60,11 +43,6 @@ body {
   textarea {
     color: var(--calculator-color);
   }
-
-  * {
-    background-color: #1c1d1c;
-  }
-
 }
 
 .button {
@@ -72,10 +50,8 @@ body {
   background-color: var(--button-color);
 }
 
-.button:hover {
-  background-color: var(--active-color);
-}
 
+.button:hover ,
 .button:active,
 .buttons-group input[type="radio"]:checked + .button,
 .checkbox-group input[type="checkbox"]:checked + .button {
@@ -84,20 +60,13 @@ body {
 
 /* dop-info */
 
-.percent {
-  background-color: var(--second-color);
-
-  span{
-    background-color:var(--calculator-color) ;
-    color: var(--label-color);
-  }
-}
-
+.percent span,
 .speedbuton,
 .daily-casa input ,
- span#rezult,
- #procentSum
+#rezult,
+#procentSum
 {
+  color: var(--zapas-color);
   background-color: var(--calculator-color);
 }
 /* range */
@@ -107,16 +76,7 @@ body {
   color: var(--label-color);
 }
 
-.theme-switcher {
-  .buttons-group {
+  .buttons-group , .switcher-advanced , .daily-casa, 
+  .kalkulator,.percent {
     background-color: var(--second-color);
   }
-
-  .switcher-advanced {
-    background-color: var(--second-color);
-  }
-}
-
-.daily-casa {
-  background-color: var(--second-color);
-}
