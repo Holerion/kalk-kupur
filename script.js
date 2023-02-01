@@ -188,7 +188,6 @@ const colorInput = document.querySelectorAll(".theme-switcher input[type=color]"
 colorInput.forEach((e) => {
   e.addEventListener("input", function () {
     setColor();
-    LocalStor(e);
   });
 });
 
@@ -312,13 +311,6 @@ function TemeShow() {
 
 
 
-function supports_html5_storage() {
-  try {
-        return 'localStorage' in window && window['localStorage'] !== null;
-      } catch (e) {
-    return false;
-   }
- }
 
 
 //Local Storage 
@@ -337,13 +329,17 @@ function LocalStor(el){
 if (LS.getItem("formData")) {
   formData = JSON.parse(LS.getItem("formData"));
   for (let key in formData) {
-    console.log(`#${key}`)
-    let el = document.querySelector(`#${key}`);
-    if (el.type === "checkbox" && formData[key] === "on") {
-      el.checked = true;
-    } else {
-      el.value = formData[key];
+    try{
+      let el = document.querySelector(`#${key}`);
+      if (el.type === "checkbox" && formData[key] === "on") {
+        el.checked = true;
+      } else {
+        el.value = formData[key];
+      }
+    }catch(error){
+      console.log(error)
     }
+
   }
 }
 
