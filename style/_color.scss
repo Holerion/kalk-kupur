@@ -53,8 +53,8 @@ span{
 
 .button:hover ,
 .button:active,
-.buttons-group input[type="radio"]:checked + .button,
-.checkbox-group input[type="checkbox"]:checked + .button {
+ input[type="radio"]:checked + .button,
+ input[type="checkbox"]:checked + .button {
   background-color: var(--active-color);
 }
 

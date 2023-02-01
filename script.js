@@ -42,6 +42,15 @@ function SumKupuru() {
     }
 
   kalkKupurAnswer.innerHTML = `${sum}`;
+
+  const AutoSet =document.querySelector('#AutoSet');
+  if(AutoSet.checked){
+    DayliCasaInputs[1].value= +kalkKupurAnswer.textContent
+    DailyCasaSuma()
+    ProcentSum.value= +document.querySelector(".daily-casa #rezult").textContent
+    labelSet()
+
+  }
 }
 
 
@@ -169,13 +178,25 @@ function SetPercent(e) {
 
 
 const DayliCasaInputs = document.querySelectorAll("#DayliCasa");
+
+// DayliCasaInputs.forEach(function (el) {
+//   el.addEventListener("input", function () {
+//     document.querySelector(".daily-casa #rezult").innerHTML = `${
+//       + kalkKupurAnswer.textContent + +DayliCasaInputs[2].value - +DayliCasaInputs[3].value - +DayliCasaInputs[0].value
+//     }`;
+//   });
+// });
+
 DayliCasaInputs.forEach(function (el) {
   el.addEventListener("input", function () {
-    document.querySelector(".daily-casa #rezult").innerHTML = `${
-      +DayliCasaInputs[1].value + +DayliCasaInputs[2].value - +DayliCasaInputs[3].value - +DayliCasaInputs[0].value
-    }`;
+    DailyCasaSuma();
   });
 });
+
+function DailyCasaSuma(){ document.querySelector(".daily-casa #rezult").innerHTML = `${
+  +DayliCasaInputs[1].value + +DayliCasaInputs[2].value - +DayliCasaInputs[3].value - +DayliCasaInputs[0].value
+}`;
+}
 
 const themeButtons = document.querySelectorAll(".theme-switcher .checkbox-item");
 const colorInput = document.querySelectorAll(".theme-switcher input[type=color]");
@@ -244,3 +265,12 @@ if (LS.getItem("formData")) {
     }
   }
 }
+
+
+
+
+
+
+
+
+

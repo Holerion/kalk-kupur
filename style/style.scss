@@ -183,10 +183,13 @@ max-height: 590px;
 }
 
 /* result */
-.buttons-group input[type="radio"],
-.checkbox-group input[type="checkbox"] {
+input[type="radio"]
+,input[type="checkbox"] 
+{
   display: none;
 }
+
+
 
 .buttons-group .button {
   width: 40px;
@@ -212,8 +215,8 @@ max-height: 590px;
 }
 
 .button:active,
-.buttons-group input[type="radio"]:checked + .button,
-.checkbox-group input[type="checkbox"]:checked + .button {
+ input[type="radio"]:checked + .button,
+ input[type="checkbox"]:checked + .button {
   box-shadow: 6px 6px 6px 0px rgba(34, 60, 80, 0.414) inset;
 
   transition: 0.2s;
