@@ -36,13 +36,18 @@ function ItemScroll(el) {
 function SumKupuru() {
   let sum = 0;
 
-  for (let i = 0; i < items.length; i++)
+  for (let i = 0; i < items.length; i++){
+    LocalStor(items[i])
+
     if (!CheckButoon[i].checked) {
-      sum += +items[i].value * +items[i].dataset.nominal;
+      sum += +items[i].value * +items[i].dataset.nominal;      
     }
+  }
 
   kalkKupurAnswer.innerHTML = `${sum}`;
 
+
+  
   SetDailyCasaAuto()
   SetProcentSumAuto()
 }
@@ -101,10 +106,13 @@ const range = document.querySelector("#range");
 const label = document.querySelector(".percent #value");
 function labelSet() {
   const ProcentLabel = document.querySelector(".percent #procent");  
-const ProcentSum = document.querySelector(".percent #procentSum");
+  const ProcentSum = document.querySelector(".percent #procentSum");
 
   label.style.left = `${range.value * 1.55}px`;
   ProcentLabel.innerHTML = `${(ProcentSum.value / 100) * range.value}`;
+
+  LocalStor(ProcentSum);
+  LocalStor(label);
 }
 
 label.addEventListener("input", function () {
@@ -128,11 +136,12 @@ function SetPercent(e) {
 
 
 //daylicasa
-const DayliCasaInputs = document.querySelectorAll("#DayliCasa");
+const DayliCasaInputs = document.querySelectorAll(".DayliCasa");
 DayliCasaInputs.forEach(function (el) {  
   el.addEventListener("input", function () {
-    DailyCasaSuma();
-    SetProcentSumAuto()
+    DailyCasaSuma(); 
+
+    
   });
 });
 
@@ -140,6 +149,9 @@ function DailyCasaSuma(){
   document.querySelector(".daily-casa #rezult").innerHTML 
   = `${+DayliCasaInputs[1].value + +DayliCasaInputs[2].value - +DayliCasaInputs[3].value - +DayliCasaInputs[0].value
 }`;
+SetProcentSumAuto();  
+
+DayliCasaInputs.forEach(e => LocalStor(e))
 }
 //daylicasa
 
@@ -159,6 +171,7 @@ function addBodyTheme() {
   document.querySelector("body").style = "";
   themeButtons.forEach((e) => {
     setTimeout(() => {
+      LocalStor(e);
       if (e.firstElementChild.checked) {
         document.querySelector(".switcher-advanced").classList.remove("show");
         document.querySelector("body").classList.add(`${e.lastElementChild.dataset.theme}`);
@@ -176,6 +189,7 @@ const colorInput = document.querySelectorAll(".theme-switcher input[type=color]"
 colorInput.forEach((e) => {
   e.addEventListener("input", function () {
     setColor();
+    LocalStor(e);
   });
 });
 
@@ -299,23 +313,33 @@ function TemeShow() {
 
 
 
-
+function supports_html5_storage() {
+  try {
+        return 'localStorage' in window && window['localStorage'] !== null;
+      } catch (e) {
+    return false;
+   }
+ }
 
 
 //Local Storage 
 let formData = {};
 const LS = localStorage;
-const body = document.querySelector("body");
-body.addEventListener("input", function (event) {
-  formData[event.target.name] = event.target.value;
-  LS.setItem("formData", JSON.stringify(formData));
-});
 
-try {
+function LocalStor(el){
+  if((el.type==='number')||(el.type==='color')){
+    formData[el.id] = el.value;
+    LS.setItem("formData", JSON.stringify(formData));
+  }
+}
+
+
+
 if (LS.getItem("formData")) {
   formData = JSON.parse(LS.getItem("formData"));
   for (let key in formData) {
-    let el = document.querySelector(key);
+    console.log(`#${key}`)
+    let el = document.querySelector(`#${key}`);
     if (el.type === "checkbox" && formData[key] === "on") {
       el.checked = true;
     } else {
@@ -323,7 +347,5 @@ if (LS.getItem("formData")) {
     }
   }
 }
-} catch (error) {
-  console.error(error);
-}
+
 //Local Storage 
