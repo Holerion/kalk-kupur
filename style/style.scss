@@ -43,6 +43,8 @@ $font-size: 20px;
   border: none;
   box-sizing: border-box;
   outline: none;
+  transition: 
+  background-color 1s;
 }
 
 li {
@@ -108,7 +110,7 @@ max-height: 590px;
     text-shadow: 2px 2px 5px black;
     font-size: 0.9rem;
 
-    transition: 0.2s;
+
   }
 
   .curent-shell radio-item label {
@@ -240,7 +242,7 @@ max-height: 590px;
   top: 0;
   border-radius: 5px;
   transform: translateX(0px);
-  transition: 0.5s;
+  transition: transform 0.5s,  background-color 1s;
   z-index: 1;
 
   .content {
@@ -260,7 +262,7 @@ max-height: 590px;
   }
   &.show {
     transform: translateX(-240px) ;
-    transition: 1s;
+    transition: transform 0.5s,  background-color 1s;
   }
   input{    
     appearance: textfield;
@@ -351,7 +353,7 @@ transform:translateY(200px);
 
   border-radius: 5px;
 
-  transition: 0.5s;
+  transition:transform 0.5s,  background-color 1s;
 
   span {
     padding-left: 15px;
