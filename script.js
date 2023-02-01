@@ -171,7 +171,6 @@ function addBodyTheme() {
   document.querySelector("body").style = "";
   themeButtons.forEach((e) => {
     setTimeout(() => {
-      LocalStor(e);
       if (e.firstElementChild.checked) {
         document.querySelector(".switcher-advanced").classList.remove("show");
         document.querySelector("body").classList.add(`${e.lastElementChild.dataset.theme}`);
