@@ -1,4 +1,4 @@
-const radioButtons = document.querySelectorAll('input[name="sidepanel"]');
+//kalk cupur
 const CheckButoon = document.querySelectorAll('input[name="current"]')
 
 const kalkKupurAnswer = document.querySelector(".result #kalk-kupur");
@@ -43,45 +43,15 @@ function SumKupuru() {
 
   kalkKupurAnswer.innerHTML = `${sum}`;
 
-  const AutoSet =document.querySelector('#AutoSet');
-  if(AutoSet.checked){
-    DayliCasaInputs[1].value= +kalkKupurAnswer.textContent
-    DailyCasaSuma()
-    ProcentSum.value= +document.querySelector(".daily-casa #rezult").textContent
-    labelSet()
-
-  }
+  SetDailyCasaAuto()
+  SetProcentSumAuto()
 }
-
-
-
-const CheckButoonLabel = document.querySelectorAll(".checkbox-group label");
-CheckButoonLabel.forEach(function (e, i) {
-  e.addEventListener("click", function () {
-    setTimeout(function () {
-      SumKupuru();
-    }, 1);
-  });
-});
-
-function clearCheckbox() {
-    document.querySelectorAll('input[name="current"]').forEach(function (el) {
-      el.checked = false;
-    });
-    SumKupuru();
-  }
-
-function clearInput() {
-  items.forEach(function (el) {
-    el.value = "";
-  });
-  kalkKupurAnswer.innerHTML = `${0}`;
-}
+//kalk cupur
 
 
 
 
-
+//save tabs
 const dataSave = document.querySelectorAll('.buttons-group input[name="dataSave"]');
 let previos = 0;
 dataSave.forEach(function (el, i) {
@@ -116,48 +86,27 @@ dataSave.forEach(function (el, i) {
     SumKupuru();
   });
 });
-
-const textArea = document.querySelector(".calkulator #example");
-document.querySelectorAll(".calkulator .buttons .item").forEach((el) =>
-  el.addEventListener("click", function () {
-    textArea.value += el.textContent;
-  })
-);
-
-const buttonD = document.querySelector(".calkulator .buttons .item-d").addEventListener("click", function () {
-  document.querySelector(".calkulator #answer").innerHTML = eval(textArea.value);
-});
-
-const buttonC = document.querySelector(".calkulator .buttons .item-c").addEventListener("click", function () {
-  textArea.value = "";
-  document.querySelector(".calkulator #answer").innerHTML = "0";
-});
-
-const buttonCC = document.querySelector(".calkulator .buttons .item-cc").addEventListener("click", function () {
-  textArea.value = textArea.value.slice(0, -1);
-});
+//save tabs
 
 
 
-function ProcentPanelShow() {
-  document.querySelector(".percent").classList.toggle("show");
-}
-function TemeShow() {
-    document.querySelector(".theme-switcher").classList.toggle("show");
-  }
-  function DailyCasaShow() {
-    document.querySelector(".daily-casa").classList.toggle("show");
-  }
 
+
+
+
+
+
+//procent
 const range = document.querySelector("#range");
 const label = document.querySelector(".percent #value");
-const ProcentLabel = document.querySelector(".percent #procent");
+function labelSet() {
+  const ProcentLabel = document.querySelector(".percent #procent");  
 const ProcentSum = document.querySelector(".percent #procentSum");
 
-function labelSet() {
   label.style.left = `${range.value * 1.55}px`;
   ProcentLabel.innerHTML = `${(ProcentSum.value / 100) * range.value}`;
 }
+
 label.addEventListener("input", function () {
   range.value = label.value;
 
@@ -174,33 +123,38 @@ function SetPercent(e) {
   label.value = +e.textContent;
   labelSet();
 }
+//procent
 
 
 
+//daylicasa
 const DayliCasaInputs = document.querySelectorAll("#DayliCasa");
-
-// DayliCasaInputs.forEach(function (el) {
-//   el.addEventListener("input", function () {
-//     document.querySelector(".daily-casa #rezult").innerHTML = `${
-//       + kalkKupurAnswer.textContent + +DayliCasaInputs[2].value - +DayliCasaInputs[3].value - +DayliCasaInputs[0].value
-//     }`;
-//   });
-// });
-
-DayliCasaInputs.forEach(function (el) {
+DayliCasaInputs.forEach(function (el) {  
   el.addEventListener("input", function () {
     DailyCasaSuma();
+    SetProcentSumAuto()
   });
 });
 
-function DailyCasaSuma(){ document.querySelector(".daily-casa #rezult").innerHTML = `${
-  +DayliCasaInputs[1].value + +DayliCasaInputs[2].value - +DayliCasaInputs[3].value - +DayliCasaInputs[0].value
+function DailyCasaSuma(){ 
+  document.querySelector(".daily-casa #rezult").innerHTML 
+  = `${+DayliCasaInputs[1].value + +DayliCasaInputs[2].value - +DayliCasaInputs[3].value - +DayliCasaInputs[0].value
 }`;
 }
+//daylicasa
 
-const themeButtons = document.querySelectorAll(".theme-switcher .checkbox-item");
-const colorInput = document.querySelectorAll(".theme-switcher input[type=color]");
+
+
+
+
+
+
+
+
+//Theme
 function addBodyTheme() {
+  const themeButtons = document.querySelectorAll(".theme-switcher .checkbox-item");
+
   document.querySelector("body").className = "";
   document.querySelector("body").style = "";
   themeButtons.forEach((e) => {
@@ -218,6 +172,7 @@ function addBodyTheme() {
   });
 }
 
+const colorInput = document.querySelectorAll(".theme-switcher input[type=color]");
 colorInput.forEach((e) => {
   e.addEventListener("input", function () {
     setColor();
@@ -228,13 +183,12 @@ function setColor() {
   const body = document.querySelector("body.theme9").style;
 
   let colorArr = document.querySelectorAll('.switcher-advanced input[type="color"]');
-  
-  
-  
+     
   for (let i = 0; i < colorArr.length; i++) {
     body.setProperty(colorArr[i].name, `${colorInput[i].value}`);
   }
 }
+//Theme
 
 
 
@@ -244,8 +198,7 @@ function setColor() {
 
 
 
-
-
+//Local Storage 
 let formData = {};
 const LS = localStorage;
 const body = document.querySelector("body");
@@ -265,6 +218,32 @@ if (LS.getItem("formData")) {
     }
   }
 }
+//Local Storage 
+
+
+
+
+//calculating
+const textArea = document.querySelector(".calkulator #example");
+document.querySelectorAll(".calkulator .buttons .item").forEach((el) =>
+  el.addEventListener("click", function () {
+    textArea.value += el.textContent;
+  })
+);
+
+const buttonD = document.querySelector(".calkulator .buttons .item-d").addEventListener("click", function () {
+  document.querySelector(".calkulator #answer").innerHTML = eval(textArea.value);
+});
+
+const buttonC = document.querySelector(".calkulator .buttons .item-c").addEventListener("click", function () {
+  textArea.value = "";
+  document.querySelector(".calkulator #answer").innerHTML = "0";
+});
+
+const buttonCC = document.querySelector(".calkulator .buttons .item-cc").addEventListener("click", function () {
+  textArea.value = textArea.value.slice(0, -1);
+});
+//calculating
 
 
 
@@ -274,3 +253,67 @@ if (LS.getItem("formData")) {
 
 
 
+
+
+
+
+
+
+
+
+//function......
+function clearCheckbox() {
+  document.querySelectorAll('input[name="current"]').forEach(function (el) {
+    el.checked = false;
+  });
+  SumKupuru();
+}
+
+function clearInput() {
+items.forEach(function (el) {
+  el.value = "";
+});
+kalkKupurAnswer.innerHTML = `${0}`;
+}
+const CheckButoonLabel = document.querySelectorAll(".checkbox-group label");
+CheckButoonLabel.forEach(function (e, i) {
+  e.addEventListener("click", function () {
+    setTimeout(function () {
+      SumKupuru();
+    }, 1);
+  });
+});
+
+
+
+
+//auto
+function SetDailyCasaAuto(){
+  if(document.querySelector('#AutoSet').checked){
+  DayliCasaInputs[1].value= +kalkKupurAnswer.textContent
+  DailyCasaSuma()
+  }
+}
+function SetProcentSumAuto(){  
+const ProcentSum = document.querySelector(".percent #procentSum");
+
+  if(document.querySelector('#AutoSet').checked){
+  ProcentSum.value= +document.querySelector(".daily-casa #rezult").textContent
+  labelSet()
+  }
+}
+//auto
+
+
+//show-hide
+function ProcentPanelShow() {
+  document.querySelector(".percent").classList.toggle("show");
+}
+function TemeShow() {
+    document.querySelector(".theme-switcher").classList.toggle("show");
+  }
+  function DailyCasaShow() {
+    document.querySelector(".daily-casa").classList.toggle("show");
+  }
+//show-hide
+//function......
