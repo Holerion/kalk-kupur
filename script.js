@@ -197,32 +197,6 @@ function setColor() {
 
 
 
-
-//Local Storage 
-let formData = {};
-const LS = localStorage;
-const body = document.querySelector("body");
-body.addEventListener("input", function (event) {
-  formData[event.target.name] = event.target.value;
-  LS.setItem("formData", JSON.stringify(formData));
-});
-
-if (LS.getItem("formData")) {
-  formData = JSON.parse(LS.getItem("formData"));
-  for (let key in formData) {
-    let el = document.querySelector(key);
-    if (el.type === "checkbox" && formData[key] === "on") {
-      el.checked = true;
-    } else {
-      el.value = formData[key];
-    }
-  }
-}
-//Local Storage 
-
-
-
-
 //calculating
 const textArea = document.querySelector(".calkulator #example");
 document.querySelectorAll(".calkulator .buttons .item").forEach((el) =>
@@ -317,3 +291,39 @@ function TemeShow() {
   }
 //show-hide
 //function......
+
+
+
+
+
+
+
+
+
+
+
+//Local Storage 
+let formData = {};
+const LS = localStorage;
+const body = document.querySelector("body");
+body.addEventListener("input", function (event) {
+  formData[event.target.name] = event.target.value;
+  LS.setItem("formData", JSON.stringify(formData));
+});
+
+try {
+if (LS.getItem("formData")) {
+  formData = JSON.parse(LS.getItem("formData"));
+  for (let key in formData) {
+    let el = document.querySelector(key);
+    if (el.type === "checkbox" && formData[key] === "on") {
+      el.checked = true;
+    } else {
+      el.value = formData[key];
+    }
+  }
+}
+} catch (error) {
+  console.error(error);
+}
+//Local Storage 
