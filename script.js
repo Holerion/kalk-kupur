@@ -1,5 +1,5 @@
 //kalk cupur
-const CheckButoon = document.querySelectorAll('input[name="current"]')
+const CheckButoon = document.querySelectorAll('input[name="current"]');
 
 const kalkKupurAnswer = document.querySelector(".result #kalk-kupur");
 
@@ -29,6 +29,7 @@ function ItemScroll(el) {
     } else {
       el.value++;
     }
+    LocalStor(event.target)
     SumKupuru();
   });
 }
@@ -36,25 +37,18 @@ function ItemScroll(el) {
 function SumKupuru() {
   let sum = 0;
 
-  for (let i = 0; i < items.length; i++){
-    LocalStor(items[i])
-
+  for (let i = 0; i < items.length; i++) {
     if (!CheckButoon[i].checked) {
-      sum += +items[i].value * +items[i].dataset.nominal;      
+      sum += +items[i].value * +items[i].dataset.nominal;
     }
   }
 
   kalkKupurAnswer.innerHTML = `${sum}`;
 
-
-  
-  SetDailyCasaAuto()
-  SetProcentSumAuto()
+  SetDailyCasaAuto();
+  SetProcentSumAuto();
 }
 //kalk cupur
-
-
-
 
 //save tabs
 const dataSave = document.querySelectorAll('.buttons-group input[name="dataSave"]');
@@ -93,26 +87,18 @@ dataSave.forEach(function (el, i) {
 });
 //save tabs
 
-
-
-
-
-
-
-
-
 //procent
 const range = document.querySelector("#range");
 const label = document.querySelector(".percent #value");
 function labelSet() {
-  const ProcentLabel = document.querySelector(".percent #procent");  
+  const ProcentLabel = document.querySelector(".percent #procent");
   const ProcentSum = document.querySelector(".percent #procentSum");
 
   label.style.left = `${range.value * 1.55}px`;
   ProcentLabel.innerHTML = `${(ProcentSum.value / 100) * range.value}`;
 
-  LocalStor(ProcentSum);
-  LocalStor(label);
+  // LocalStor(ProcentSum);
+  // LocalStor(label);
 }
 
 label.addEventListener("input", function () {
@@ -133,39 +119,29 @@ function SetPercent(e) {
 }
 //procent
 
-
-
 //daylicasa
 const DayliCasaInputs = document.querySelectorAll(".DayliCasa");
-DayliCasaInputs.forEach(function (el) {  
+DayliCasaInputs.forEach(function (el) {
   el.addEventListener("input", function () {
-    DailyCasaSuma(); 
-
-    
+    DailyCasaSuma();
   });
 });
 
-function DailyCasaSuma(){ 
-  document.querySelector(".daily-casa #rezult").innerHTML 
-  = `${+DayliCasaInputs[1].value + +DayliCasaInputs[2].value - +DayliCasaInputs[3].value - +DayliCasaInputs[0].value
-}`;
-SetProcentSumAuto();  
+function DailyCasaSuma() {
+  document.querySelector(".daily-casa #rezult").innerHTML = `${
+    +DayliCasaInputs[1].value + +DayliCasaInputs[2].value - +DayliCasaInputs[3].value - +DayliCasaInputs[0].value
+  }`;
+  SetProcentSumAuto();
 
-DayliCasaInputs.forEach(e => LocalStor(e))
+  DayliCasaInputs.forEach((e) => LocalStor(e));
 }
 //daylicasa
-
-
-
-
-
-
-
-
 
 //Theme
 function addBodyTheme() {
   const themeButtons = document.querySelectorAll(".theme-switcher .checkbox-item");
+
+
 
   document.querySelector("body").className = "";
   document.querySelector("body").style = "";
@@ -178,8 +154,9 @@ function addBodyTheme() {
         if (e.lastElementChild.dataset.theme == "theme9") {
           document.querySelector(".switcher-advanced").classList.add("show");
           setColor();
-        }
+        }        
       }
+      LocalStor(e.firstElementChild)
     }, 0);
   });
 }
@@ -188,26 +165,19 @@ const colorInput = document.querySelectorAll(".theme-switcher input[type=color]"
 colorInput.forEach((e) => {
   e.addEventListener("input", function () {
     setColor();
-  });
+  });  
 });
 
 function setColor() {
-  const body = document.querySelector("body.theme9").style;
+  const body = document.querySelector("body.theme9").style;  
 
   let colorArr = document.querySelectorAll('.switcher-advanced input[type="color"]');
-     
+
   for (let i = 0; i < colorArr.length; i++) {
     body.setProperty(colorArr[i].name, `${colorInput[i].value}`);
-  }
+  }  
 }
 //Theme
-
-
-
-
-
-
-
 
 //calculating
 const textArea = document.querySelector(".calkulator #example");
@@ -231,22 +201,6 @@ const buttonCC = document.querySelector(".calkulator .buttons .item-cc").addEven
 });
 //calculating
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //function......
 function clearCheckbox() {
   document.querySelectorAll('input[name="current"]').forEach(function (el) {
@@ -256,10 +210,10 @@ function clearCheckbox() {
 }
 
 function clearInput() {
-items.forEach(function (el) {
-  el.value = "";
-});
-kalkKupurAnswer.innerHTML = `${0}`;
+  items.forEach(function (el) {
+    el.value = "";
+  });
+  kalkKupurAnswer.innerHTML = `${0}`;
 }
 const CheckButoonLabel = document.querySelectorAll(".checkbox-group label");
 CheckButoonLabel.forEach(function (e, i) {
@@ -270,77 +224,70 @@ CheckButoonLabel.forEach(function (e, i) {
   });
 });
 
-
-
-
 //auto
-function SetDailyCasaAuto(){
-  if(document.querySelector('#AutoSet').checked){
-  DayliCasaInputs[1].value= +kalkKupurAnswer.textContent
-  DailyCasaSuma()
+function SetDailyCasaAuto() {
+  if (document.querySelector("#AutoSet").checked) {
+    DayliCasaInputs[1].value = +kalkKupurAnswer.textContent;
+    DailyCasaSuma();
   }
 }
-function SetProcentSumAuto(){  
-const ProcentSum = document.querySelector(".percent #procentSum");
 
-  if(document.querySelector('#AutoSet').checked){
-  ProcentSum.value= +document.querySelector(".daily-casa #rezult").textContent
-  labelSet()
+function SetProcentSumAuto() {
+  const ProcentSum = document.querySelector(".percent #procentSum");
+
+  if (document.querySelector("#AutoSet").checked) {
+    ProcentSum.value = +document.querySelector(".daily-casa #rezult").textContent;
+    labelSet();
   }
 }
 //auto
-
 
 //show-hide
 function ProcentPanelShow() {
   document.querySelector(".percent").classList.toggle("show");
 }
 function TemeShow() {
-    document.querySelector(".theme-switcher").classList.toggle("show");
-  }
-  function DailyCasaShow() {
-    document.querySelector(".daily-casa").classList.toggle("show");
-  }
+  document.querySelector(".theme-switcher").classList.toggle("show");
+}
+function DailyCasaShow() {
+  document.querySelector(".daily-casa").classList.toggle("show");
+}
 //show-hide
 //function......
 
-
-
-
-
-
-
-
-
-
-//Local Storage 
+//Local Storage
 let formData = {};
 const LS = localStorage;
 
-function LocalStor(el){
-  if((el.type==='number')||(el.type==='color')){
+function LocalStor(el) {
+  if ((el.type != "checkbox") && (el.type != "radio") )
     formData[el.id] = el.value;
-    LS.setItem("formData", JSON.stringify(formData));
-  }
+  else 
+    formData[el.id] = el.checked;
+
+  LS.setItem("formData", JSON.stringify(formData));
 }
-
-
 
 if (LS.getItem("formData")) {
   formData = JSON.parse(LS.getItem("formData"));
   for (let key in formData) {
-    try{
+    try {
       let el = document.querySelector(`#${key}`);
-      if (el.type === "checkbox" && formData[key] === "on") {
-        el.checked = true;
+      if ((el.type == "checkbox") || (el.type == "radio") ) {
+        el.checked = formData[key];
+console.log(el.checked)
       } else {
         el.value = formData[key];
       }
-    }catch(error){
-      console.log(error)
+    } catch (error) {
+      console.log(error);
     }
-
   }
 }
 
-//Local Storage 
+const body = document.querySelector("body");
+body.addEventListener("input", function (event) {
+  // if (event.target.type == "color" || event.target.type == "radio") 
+  LocalStor(event.target);
+});
+//Local Storage
