@@ -208,10 +208,17 @@ input[type="radio"]
   border-radius: 5px;
 
   transition: 0.5s;
+
+
+  box-shadow:  2px 2px 0px #5a5a5a,
+  -2px -2px 0px #ffffff;
 }
 
 .button:hover {
   transition: 0.2s;
+
+  box-shadow:  0px 0px 0px #5a5a5a,
+  0px 0px 0px #ffffff;
 }
 
 .button:active,
